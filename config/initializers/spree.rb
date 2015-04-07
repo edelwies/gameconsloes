@@ -13,6 +13,10 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
+  config.currency = 'IRR'
+
 end
 
-Spree.user_class = "Spree::User"
+SpreeI18n::Config.available_locales = [:en, :fa]
+SpreeI18n::Config.supported_locales = [:en, :fa]
+Spree.user_class = 'Spree::User'

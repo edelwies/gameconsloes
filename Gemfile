@@ -52,3 +52,4 @@ gem 'spree_i18n', github: 'Yellowen/Bazaar_i18n', branch: '3-0-stable'
 gem 'rails-i18n'
 
 gem 'puma'
+gem 'rb-readline'

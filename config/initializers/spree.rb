@@ -20,3 +20,4 @@ end
 SpreeI18n::Config.available_locales = [:en, :fa]
 SpreeI18n::Config.supported_locales = [:en, :fa]
 Spree.user_class = 'Spree::User'
+Devise.secret_key = "b4d2542590f5dbda70061871468fe2a1264159a171a0838b76bbadd35936df68e8d54079af3a018c01c05dac8f6056522bcf"

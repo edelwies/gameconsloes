@@ -41,15 +41,15 @@ set :rails_env, "production"
 # setting per server overrides global ssh_options
 
 # fetch(:default_env).merge!(rails_env: :production)
-namespace :deploy do
-  desc "reload the database with seed data"
-  task :seed do
-    on roles(:db) do
-      within release_path do
-       execute :rake, "db:seed", "RAILS_ENV=staging"
-      end
-    end
-  end
+# namespace :deploy do
+#   desc "reload the database with seed data"
+#   task :seed do
+#     on roles(:db) do
+#       within release_path do
+#        execute :rake, "db:seed", "RAILS_ENV=staging"
+#       end
+#     end
+#   end
 
-  after "deploy:migrate", "deploy:seed"
-end
+#   after "deploy:migrate", "deploy:seed"
+# end

@@ -16,7 +16,7 @@ set :stage, :production
 # something that quacks like a hash can be used to set
 # extended properties on the server.
 server 'dl.lxsameer.com', user: 'demo', roles: %w{web app db}, primary: true
-set :deploy_to, '/home/demo/sec/'
+set :deploy_to, '/home/demo/bazaar/'
 set :rails_env, "production"
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
@@ -41,3 +41,15 @@ set :rails_env, "production"
 # setting per server overrides global ssh_options
 
 # fetch(:default_env).merge!(rails_env: :production)
+namespace :deploy do
+  desc "reload the database with seed data"
+  task :seed do
+    on roles(:db) do
+      within release_path do
+       execute :rake, "db:seed", "RAILS_ENV=staging"
+      end
+    end
+  end
+
+  after "deploy:migrate", "deploy:seed"
+end

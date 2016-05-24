@@ -18,6 +18,7 @@ set :format, :pretty
 # set :log_level, :debug
 # set :pty, true
 
+
 set :stages, ["production"]
 set :default_stage, "production"
 

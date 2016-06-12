@@ -26,7 +26,7 @@ set :default_stage, "production"
 set :bundle_flags, "--deployment --quiet --binstubs --shebang ruby-local-exec"
 
 # set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/spree}
 
 set :default_environment, {
   "PATH" => "/home/iranmosafer/.rbenv/bin:/usr/local/rbenv/versions/2.1.2/bin/:$PATH",
